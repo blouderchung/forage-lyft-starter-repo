@@ -1,4 +1,4 @@
-from Battery import Battery
+from battery import Battery
 
 class NubbinBattery(Battery):
     def __init__(self, last_service_date, current_date) -> None:

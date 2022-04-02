@@ -1,5 +1,9 @@
-from Battery import NubbinBattery, SpindlerBattery
-from Engine import capulet_engine, sternman_engine, willoughby_engine
+# from Battery import nubbinBattery, spindlerBattery
+from Battery.spindlerBattery import SpindlerBattery
+from Battery.nubbinBattery import NubbinBattery
+from Engine.capulet_engine import CapuletEngine
+from Engine.sternman_engine import SternmanEngine
+from Engine.willoughby_engine import WilloughbyEngine
 from Tire import Tire
 from car import Car
 
@@ -15,7 +19,7 @@ class CarFactory:
     
     @staticmethod
     def create_glissade(current_date, last_service_date, current_mileage, last_service_mileage):
-        engine = willoughby_engine(current_mileage, last_service_mileage)
+        engine = WilloughbyEngine(current_mileage, last_service_mileage)
         battery = SpindlerBattery(current_date, last_service_date)
         tire = Tire()
         car = Car(engine, battery, tire)
@@ -23,7 +27,7 @@ class CarFactory:
 
     @staticmethod
     def create_palindrome(current_date, last_service_date, warning_light_is_on):
-        engine = sternman_engine(warning_light_is_on)
+        engine = SternmanEngine(warning_light_is_on)
         battery = SpindlerBattery(current_date, last_service_date)
         tire = Tire()
         car = Car(engine, battery, tire)
@@ -31,7 +35,7 @@ class CarFactory:
 
     @staticmethod
     def create_rorschach(current_date, last_service_date, current_mileage, last_service_mileage):
-        engine = willoughby_engine(current_mileage, last_service_mileage)
+        engine = WilloughbyEngine(current_mileage, last_service_mileage)
         battery = NubbinBattery(current_date, last_service_date)
         tire = Tire()
         car = Car(engine, battery, tire)
@@ -39,7 +43,7 @@ class CarFactory:
 
     @staticmethod
     def create_thovex(current_date, last_service_date, current_mileage, last_service_mileage):
-        engine = capulet_engine(current_mileage, last_service_mileage)
+        engine = CapuletEngine(current_mileage, last_service_mileage)
         battery = NubbinBattery(current_date, last_service_date)
         tire = Tire()
         car = Car(engine, battery, tire)

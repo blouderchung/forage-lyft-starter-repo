@@ -1,5 +1,5 @@
-from abc import ABC, abstractmethod
-from Battery.Battery import Battery
+from abc import ABC
+from Battery.battery import Battery
 from Engine.Engine import Engine
 from Tire.Tire import Tire
 
@@ -11,4 +11,5 @@ class Car(ABC):
         self.tire = tire
 
     def needs_service(self):
-        return self.battery.needs_service() or self.engine.needs_service() or self.tire.needs_service()
+        # return self.battery.needs_service() or self.engine.needs_service() or self.tire.needs_service()
+        return self.battery.needs_service() or self.engine.needs_service()
